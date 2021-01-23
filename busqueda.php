@@ -84,10 +84,13 @@ include("db/import_db.php");
                 $row_cnt = $result->num_rows;
                 printf("<h5>Resultados de la búsqueda: $row_cnt</h5>");
               while($mostrar= mysqli_fetch_array($result)){
+                
             ?>
+            
             
             <div class="tituloContenido card" style="display:block !important; width:100%;height:200px;">
               <div><img src="img/home.jpg" style="width:250px;position:absolute;left:10px;padding:10px;"></div>
+              <button type="button" class="btn btn-warning" style="position:absolute; margin-top:70px; right:50px; widht:100px;">Guardar</button>
                     <div style="width:300px;position:relative;left:250px;padding:10px; margin-top:10px;">
                     Dirección:<?php echo $mostrar['Direccion']?></div>
                     <div style="width:300px;position:relative;left:250px;">
@@ -99,7 +102,7 @@ include("db/import_db.php");
                     <div style="width:300px;position:relative;left:250px;">
                     Tipo:<?php echo $mostrar['Tipo']?></div>
                     <div style="width:300px;position:relative;left:250px;">
-                    Precio:<?php echo $mostrar['Precio']?></div>
+                    Precio:<?php echo $mostrar['Precio']?></div>                   
             </div>
 
 
