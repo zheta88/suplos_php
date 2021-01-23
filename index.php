@@ -128,7 +128,7 @@ include("db/import_db.php");
                       $sql = "SELECT DISTINCT Ciudad FROM datos_generales";
                       $result = mysqli_query($connect,$sql);
                       while($mostrar= mysqli_fetch_array($result)){
-                          echo "<option value={$mostrar['Ciudad']} name='Ciudad'>{$mostrar['Ciudad']} </option>";
+                        echo "<option value='".$mostrar['Ciudad']."' name='Ciudad'>{$mostrar['Ciudad']} </option>";
                       }
                     ?>
                   </select>
@@ -142,7 +142,7 @@ include("db/import_db.php");
                       $sql = "SELECT DISTINCT Tipo FROM datos_generales";
                       $result = mysqli_query($connect,$sql);
                       while($mostrar= mysqli_fetch_array($result)){
-                          echo "<option value={$mostrar['Tipo']} name='Tipo'>{$mostrar['Tipo']} </option>";
+                        echo "<option value='".$mostrar['Tipo']."' name='Tipo'>{$mostrar['Tipo']} </option>";
                       }
                     ?>
               </select>
