@@ -4,10 +4,12 @@ header('Content-type:application/xls');
 header('Content-Disposition: attachment; filename=reporte.xls');
 ?>
 <?php
-
-//$sql = "SELECT * FROM datos_generales WHERE  Ciudad='".$consultaCiudad."' AND Tipo='".$consultaTipo."'";
-$sql="SELECT *FROM datos_generales";
+$consultaCiudad=$_POST['Ciudad'] ?? '';
+$consultaTipo = $_POST['Tipo'] ?? '';
+$sql = "SELECT * FROM datos_generales WHERE  Ciudad='".$consultaCiudad."' AND Tipo='".$consultaTipo."'";
+//$sql="SELECT *FROM datos_generales";
 $result = mysqli_query($connect,$sql);
+
 ?>
 
 <table>

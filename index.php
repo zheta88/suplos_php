@@ -115,8 +115,8 @@ include("db/import_db.php");
              </div>
            </div>
          </div>
-
          <div id="tabs-3" >
+         <form action="reporte.php" method="post" id="formulario">
             <div class="colContenido" id="divResultadosBusqueda">
               <div class="tituloContenido card" style="justify-content:center;">
                 <h5 style="text-align:left;">Exportar reporte:</h5>
@@ -148,10 +148,12 @@ include("db/import_db.php");
                       }
                     ?>
               </select>
-              </div>
+              </div>   
               <div class="botonField">
-                <input type="submit" class="btn white" onclick="window.location.href='reporte.php'"value="Generar Excel" id="submitButton">
+                  <input type="submit" class="btn white" value="GENERAR EXCEL" id="submitButton">
               </div>
+            </form>
+              
               </div>
             </div>
           </div>
