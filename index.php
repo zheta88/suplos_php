@@ -33,6 +33,7 @@ include("db/import_db.php");
           <div class="filtroCiudad input-field">
             <p><label for="selectCiudad">Ciudad:</label><br></p>
               <select name="Ciudad" id="selectCiudad">
+              <option value="" selected>Elige una Ciudad</option>
                     <?php
                       $sql = "SELECT DISTINCT Ciudad FROM datos_generales";
                       $result = mysqli_query($connect,$sql);
@@ -46,6 +47,7 @@ include("db/import_db.php");
             <p><label for="selecTipo">Tipo:</label></p>
             <br>
             <select name="Tipo" id="selectTipo">
+            <option value="" selected>Elige un Tipo</option>
                     <?php
                       $sql = "SELECT DISTINCT Tipo FROM datos_generales";
                       $result = mysqli_query($connect,$sql);
