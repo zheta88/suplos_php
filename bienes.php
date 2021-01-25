@@ -69,48 +69,17 @@ include("db/import_db.php");
     </div>
     <div id="tabs" style="width: 75%;">
       <ul>
-        <li><a href="#tabs-1">Bienes disponibles</a></li>
+        
         <li><a href="#tabs-2">Mis bienes</a></li>
-        <li><a href="#tabs-3">Reportes</a></li>
-      </ul>
-      <div id="tabs-1">
-        <div class="colContenido" id="divResultadosBusqueda">
-          <div class="tituloContenido card">
-            <h5>Resultados de la búsqueda:</h5>
-            <?php
-                $sql = "SELECT * FROM datos_generales";
-                $result = mysqli_query($connect,$sql);
-              while($mostrar= mysqli_fetch_array($result)){
-            ?>
-            <div class="tituloContenido card" style="display:block !important; width:100%;height:200px;">
-              <div><img src="img/home.jpg" style="width:250px;position:absolute;left:10px;padding:10px;"></div>
-                    <div style="width:300px;position:relative;left:250px;padding:10px; margin-top:10px;">
-                    Dirección:<?php echo $mostrar['Direccion']?></div>
-                    <div style="width:300px;position:relative;left:250px;">
-                    Ciudad:<?php echo $mostrar['Ciudad']?></div>
-                    <div style="width:300px;position:relative;left:250px;">
-                    Telefono:<?php echo $mostrar['Telefono']?></div>
-                    <div style="width:300px;position:relative;left:250px;">
-                    Código Postal:<?php echo $mostrar['Codigo_Postal']?></div>
-                    <div style="width:300px;position:relative;left:250px;">
-                    Tipo:<?php echo $mostrar['Tipo']?></div>
-                    <div style="width:300px;position:relative;left:250px;">
-                    Precio:<?php echo $mostrar['Precio']?></div>
-            </div>
-
-
-            <?php
-              }
-              ?>             
-            <div class="divider"></div>
-          </div>
-        </div>
-      </div>
       
+      </ul>
+      
+      <form action="busqueda.php" method="post" id="formulario">
          <div id="tabs-2" >
            <div class="colContenido" id="divResultadosBusqueda">
              <div class="tituloContenido card" style="justify-content: center;">
-             <a href="index.php"> Volver a Inicio</a>
+            
+               <a href="index.php"> Volver a Inicio</a>
                <?php
                 $sql = "SELECT * FROM bienes";
                 $result = mysqli_query($connect,$sql);
@@ -144,53 +113,7 @@ include("db/import_db.php");
              </div>
            </div>
          </div>
-         <div id="tabs-3" >
-         <form action="reporte.php" method="post" id="formulario">
-            <div class="colContenido" id="divResultadosBusqueda">
-              <div class="tituloContenido card" style="justify-content:center;">
-                <h5 style="text-align:left;">Exportar reporte:</h5>
-                <div class="divider"></div>
-                <h5>Filtros</h5>
-                <div class ="filtroCiudad input-field"style="justify-content:center;width:60%;">
-                  <p><label for="selectCiudad">Ciudad:</label><br></p>
-                  <select name="Ciudad" id="selectCiudad">
-                  <option value="" selected>Elige una ciudad</option>
-                    <?php
-                      $sql = "SELECT DISTINCT Ciudad FROM bienes";
-                      $result = mysqli_query($connect,$sql);
-                      while($mostrar= mysqli_fetch_array($result)){
-                        echo "<option value='".$mostrar['Ciudad']."' name='Ciudad'>{$mostrar['Ciudad']} </option>";
-                      }
-                    ?>
-                  </select>
-                </div>
-                <div class="filtroTipo input-field" style="justify-content:center;width:60%;">
-                <p><label for="selecTipo">Tipo:</label></p>
-                <br>
-                <select name="Tipo" id="selectTipo">
-                  <option value="" selected>Elige un Tipo</option>
-                    <?php
-                      $sql = "SELECT DISTINCT Tipo FROM bienes";
-                      $result = mysqli_query($connect,$sql);
-                      while($mostrar= mysqli_fetch_array($result)){
-                        echo "<option value='".$mostrar['Tipo']."' name='Tipo'>{$mostrar['Tipo']} </option>";
-                      }
-                    ?>
-              </select>
-              </div>   
-              <div class="botonField">
-                  <input type="submit" class="btn white" value="GENERAR EXCEL" id="submitButton">
-              </div>
-            </form>
-              
-              </div>
-            </div>
-          </div>
-      
-        </div>
-      
-    
-  
+        </form>   
 
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>

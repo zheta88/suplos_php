@@ -113,7 +113,7 @@ include("db/import_db.php");
               }
               
               ?>
-                        
+                 
             <div class="divider"></div>
             <a href="index.php"> Volver a Inicio</a>
           </div>

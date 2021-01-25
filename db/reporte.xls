@@ -1,0 +1,12 @@
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Direccion</th>
+        <th>Ciudad</th>
+        <th>Telefono</th>
+        <th>Codigo_Postal</th>
+        <th>Tipo</th>
+        <th>Precio</th>
+    </tr>
+    </table>

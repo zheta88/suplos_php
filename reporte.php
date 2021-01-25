@@ -6,7 +6,7 @@ header('Content-Disposition: attachment; filename=reporte.xls');
 <?php
 $consultaCiudad=$_POST['Ciudad'] ?? '';
 $consultaTipo = $_POST['Tipo'] ?? '';
-$sql = "SELECT * FROM datos_generales WHERE  Ciudad='".$consultaCiudad."' AND Tipo='".$consultaTipo."'";
+$sql = "SELECT * FROM bienes WHERE  Ciudad='".$consultaCiudad."' AND Tipo='".$consultaTipo."'";
 //$sql="SELECT *FROM datos_generales";
 $result = mysqli_query($connect,$sql);
 
